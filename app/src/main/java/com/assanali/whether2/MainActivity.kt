@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_main)
         binding.bGet.setOnClickListener{
-            getResult("London")
+            getResult("Toronto")
         }
     }
     private fun getResult(name: String){
@@ -24,11 +24,11 @@ class MainActivity : AppCompatActivity() {
                   "?key=$API_KEY&q=$name&aqi=no"
 
         val queue = Volley.newRequestQueue(this)
-        val stringRequest = StringRequest(Request.Method.GET,
+        val stringRequest = StringRequest(com.android.volley.Request.Method.GET,
             url,
             {
                     response->
-                    Log.d("MyLog", "Response: $response")
+                Log.d("MyLog", "Response: $response")
             },
             {
                 Log.d("MyLog" , "Volley error: $it")
